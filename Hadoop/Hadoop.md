@@ -1,7 +1,7 @@
 # Hadoop
 #### 하둡은 컴퓨터 클러스터를 구축하여 대규모 데이터 셋을 처리할 수 있는 프레임워크로 단일 클러스터에서 수 천대로 이루어진 클러스터까지 확장 가능하도록 설계되었다.
-##### 베이스 아파치 하둡 프레임워크는 다음과 같은 모듈을 포함한다.
-- Hadoop common
+##### 베이스 아파치 하둡 프레임워크는 다음 모듈들을 포함한다.
+- Hadoop Common
 - HDFS (Hadoop Distribute File System)
 - MapReduce
 - Yarn (Yet Another Resource Negotiator)
