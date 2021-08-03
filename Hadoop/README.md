@@ -1,3 +1,4 @@
+> Hadoop: The Definitive Guide
 # 0. Hadoop
 #### 하둡은 컴퓨터 클러스터를 구축하여 대규모 데이터 셋을 처리할 수 있는 프레임워크이다. 단일 서버에서 수천 대의 머신으로 이루어진 클러스터로 확장 가능하도록 설계되었다.
 #### 관계형 데이터베이스와의 가장 큰 차이점은 관계형 데이터베이스의 경우 상대적으로 적은 양의 데이터를 낮은 지연 시간에 처리하기 위해 데이터셋을 인덱싱하기 때문에 지속적으로 변경되는 데이터셋에 적합하다. 반면 하둡은 데이터를 한 번 저장하고 여러번 읽는 어플리케이션에 적합하다.
@@ -71,3 +72,7 @@
 
 ## 노드 제거
 #### 노드를 하둡 클러스터에서 제거하는 방법은 exclude 파일로 제어한다. HDFS는 dfs.hosts.exclude 속성에, YARN은 yarn.resourcemanager.nodes.exclude-path 속성에 제거할 노드를 설정한다. 설정 후 hdfs dfsadmin - refreshNodes 명령어로 갱신한다. 
+---
+# 3. Cheat Sheet
+> https://linoxide.com/hadoop-commands-cheat-sheet/
+---
