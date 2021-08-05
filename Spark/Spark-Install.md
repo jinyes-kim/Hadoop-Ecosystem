@@ -1,6 +1,6 @@
 # Spark 2.4 Standalone Mode Install Script
 
-```
+```bash
 # os - ubuntu:20.04 LST
 
 # spark download
