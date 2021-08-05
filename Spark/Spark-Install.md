@@ -21,9 +21,9 @@ export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 
 # 주의 spark2.4 버전은 파이썬 3.7까지만 지원
 # conf/spark-env.sh
-export SPARK_SSH_OPTS="-p 9922" 
+export SPARK_SSH_OPTS="-p 22" 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
-export HADOOP_HOME=/home/hadoop/hadoop-2.9.2
+export HADOOP_HOME=$HADOOP_HOME
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native
 export SPARK_LOCAL_IP="master_ip"
