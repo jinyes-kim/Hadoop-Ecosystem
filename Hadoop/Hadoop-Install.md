@@ -95,6 +95,10 @@ vi mapre-site.xml
     <name>dfs.secondary.http.address</name>
     <value>namenode:50090</value>
   </property>
+  <property>
+    <name>dfs.permissions.enabled</name>
+    <value>false</value>
+  </property>
 </configuration>
 ```
 
