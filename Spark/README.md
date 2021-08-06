@@ -12,4 +12,34 @@
 #### 머신러닝 알고리즘이 데이터를 10회 처리한다고 가정하면, 맵리듀스의 경우 매번 데이터를 처음부터 읽어야한다. 반면에 스파크는 데이터를 메모리에 올려서 연산하는 인메모리 방식이기 때문에 매번 데이터를 처음부터 읽어야할 필요가 없어서 반복적인 데이터 처리 작업에서 맵리듀스보다 속도가 빠르다. 또한 Scala, Java, Python, SQL  다양한 언어를 지원한다.
 ---
 # Spark Tutorial
-> Learning Spark: Lightning-Fast Big Data Analysis
+> -
+
+## 데이터 로드
+```scala
+//Data Frame
+val textFile = spark.read.textFile("REAMD.md")
+val csvFile = spark.read.option("header", true).csv("data.csv")
+
+// 스키마 출력
+textFile.printSchema()
+
+
+//RDD
+val csvRDD = sc.textFile("data.csv")
+```
+
+## 데이터 저장
+```scala
+csvFile.write.option("header", true).csv("/home/user/test_write.csv")
+```
+
+
+## 데이터 출력
+
+```scala
+//DataFrame
+csvFile.show()
+
+//RDD
+textFile.collect().foreach(println)
+```
