@@ -41,5 +41,20 @@ csvFile.write.option("header", true).csv("/home/user/test_write.csv")
 csvFile.show()
 
 //RDD
-textFile.collect().foreach(println)
+csvRDD.collect().foreach(println)
+```
+
+## 필터링
+```scala
+// gender 컬럼 값이 1이고, age 컬럼이 30 초과인 행만 출력
+df.filter(df("gener") === 1 && df("Age") > 30).show()
+
+// gener 컬럼 값이 1인 행을 new_df에 할당
+val new_df = df.filter(df("columns") === 1)
+```
+
+## 컬럼 이름 변경
+```
+// Age 컬럼 이름을 new_Age로 변경한 데이터 프레임을 할당
+val new_df = df.withColumnRenamed("Age", "new_Age")
 ```
