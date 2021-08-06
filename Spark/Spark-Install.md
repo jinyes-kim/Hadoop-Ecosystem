@@ -2,6 +2,7 @@
 
 ```bash
 # os - ubuntu:20.04 LST
+# spark version 2.4.8
 
 # spark download
 wget http://archive.apache.org/dist/spark/spark-2.4.8/spark-2.4.8-bin-hadoop2.7.tgz
