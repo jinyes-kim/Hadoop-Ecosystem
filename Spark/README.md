@@ -11,6 +11,24 @@
 ## 스파크 vs 맵리듀스
 #### 머신러닝 알고리즘이 데이터를 10회 처리한다고 가정하면, 맵리듀스의 경우 매번 데이터를 처음부터 읽어야한다. 반면에 스파크는 데이터를 메모리에 올려서 연산하는 인메모리 방식이기 때문에 매번 데이터를 처음부터 읽어야할 필요가 없어서 반복적인 데이터 처리 작업에서 맵리듀스보다 속도가 빠르다. 또한 Scala, Java, Python, SQL  다양한 언어를 지원한다.
 ---
+## RDD(Resilient Distributed Dataset)
+#### RDD는 Spark의 기본 데이터 구조로 내결함성 및 불변성을 지닌 분산 컬렉션이다. RDD의 각 데이터셋은 클러스터의 다른 노드에서 계산할 수 있는 논리적 파티션으로 나뉘어 있다.
+#### 크게 두 가지 작업을 수행할 수 있다. 
+1. **Tansformation**: RDD에 Map과 같은 변환 작업을 실시한다. 단 RDD는 변경할 수 없으므로 새로운 RDD를 반환한다.
+2. **Action**: RDD에 Reduce와 같은 계산 작업을 수행한다.
+
+## RDD vs Dataframe vs DataSet
+> https://www.analyticsvidhya.com/blog/2020/11/what-is-the-difference-between-rdds-dataframes-and-datasets/
+### RDD
+#### 직역하면 탄력적인 분산 데이터 셋이다. 스파크의 기본 데이터 구조이며 클러스터의 여러 노드에 데이터를 분할 저장 및 병렬로 처리할 수 있다. 주로 데이터 셋에서 로우 레벨의 변환을 수행하려는 경우 사용한다. 특히 RDD는 생성 시 데이터셋의 스키마를 자동으로 유추하지 않기 때문에 직접 지정해주어야 한다. (전처리 부분에서의 제어가 더 필요한 경우 RDD를 사용한다.) 
+
+### Dataframe
+#### RDD의 한계를 극복하기 위해서 스파크 1.3버전에 처음 도입되었다. 행과 열로 구성되어 있으며 RDD에서는 불가능했던 런타임 중의 디버깅이 가능하다. 또한 csv, json, avro, hdfs 등 다양한 데이터 포맷을 읽고 쓸 수 있다. 최적화를 위해 catalyst optimizer를 사용한다.
+
+### Dataset
+#### 스파크 데이터셋은 데이터프레임 API의 확장으로 RDD와 데이터프레임의 이점을 모두 제공한다. SQL 엔진을 사용하여 데이터셋의 스키마를 자동으로 찾으며 type-safe 인터페이스를 제공하는데, 해당 인터페이스는 컴파일링 중에 데이터 유형을 검사하고 유효하지 않다면 에러를 발생시킨다. 정형 데이터와 비정형 데이터를 모두 효율적으로 처리할 수 있지만 Python은 아직까지 스파크 데이터 셋을 생성할 수 없다. DataSet은 RDD보다는 빠르지만 Dataframe보다는 약간 느리다.
+
+
 # Spark Tutorial
 > -
 
@@ -20,12 +38,16 @@
 val textFile = spark.read.textFile("REAMD.md")
 val csvFile = spark.read.option("header", true).csv("data.csv")
 
-// 스키마 출력
-textFile.printSchema()
-
 
 //RDD
 val csvRDD = sc.textFile("data.csv")
+
+
+//Convert to DataFrame
+val df = csvRDD.toDF()
+
+//Convert to DataSet
+val ds = spark.createDataset(csvRDD)
 ```
 
 ## 데이터 저장
@@ -37,11 +59,15 @@ csvFile.write.option("header", true).csv("/home/user/test_write.csv")
 ## 데이터 출력
 
 ```scala
+// 스키마 출력
+textFile.printSchema()
+
 //DataFrame
 csvFile.show()
 
 //RDD
 csvRDD.collect().foreach(println)
+
 ```
 
 ## 필터링
