@@ -21,6 +21,7 @@ export CLASS_PATH="."
 
 # add hadoop user 
 adduser hadoop
+su hadoop
 
 
 # work dir
