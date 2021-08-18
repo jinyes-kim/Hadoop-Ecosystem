@@ -1,9 +1,10 @@
-package org.example;
+package org.example.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.example.consumer.BasicConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
