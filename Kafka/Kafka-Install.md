@@ -24,8 +24,8 @@ tar xvzf kafka
 
 # vi config/server.properties
 listeners=PLAINTEXT://:9092
-advertised.listeners=PLAINTEXT://your.host.name:9092
-log.dirs=$HOME/kafka_2.12-2.5.0/tmp/kafka-logs
+advertised.listeners=PLAINTEXT://**your.host.name**:9092
+log.dirs=/home/**'username'**/kafka_2.12-2.5.0/tmp/kafka-logs
 num.partitions=2
 
 
