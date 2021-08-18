@@ -1,7 +1,8 @@
 # Kafka Standalone Mode Install Script
-```
+```bash
 # OS: Ubunt 20.04 LST
 # Kafka: Apache base 2.5.0
+
 
 # install Java
 sudo apt-get install -y openjdk-8-jdk
@@ -22,7 +23,14 @@ tar xvzf kafka
 
 
 # vi config/server.properties
+listeners=PLAINTEXT://:9092
+advertised.listeners=PLAINTEXT://your.host.name:9092
+log.dirs=${HOME}/kafka_2.12-2.5.0/tmp/kafka-logs
+num.partitions=2
 
 
+# Start ZooKeeper
+./bin/kafka-server-start.sh -deamon ./config/server.properties 
 
-
+# Start Kafka
+./bin/kafka-server-start.sh -daemon ./config/server.properties 
