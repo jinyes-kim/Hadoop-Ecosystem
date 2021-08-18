@@ -4,10 +4,10 @@ from kafka import KafkaConsumer
 broker = ['localhost:9092']
 
 # Topic name
-topicName = 'jinyes'
+topic = 'jinyes'
 
 # Generate consumer object
-consumer = KafkaConsumer(topicName,
+consumer = KafkaConsumer(topic,
                          group_id='group_123',
                          bootstrap_servers=broker,
                          auto_offset_reset='earliest')
