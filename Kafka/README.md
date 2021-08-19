@@ -6,7 +6,7 @@ Reference
 
 # 0. Kafka
 #### 카프카는 이벤트 기반 분산 스트리밍 플랫폼이다. 비슷한 서비스로 GCP의 Pub/Sub, AWS의 Kinessis 등이 있다.
-
+--- 
 # 1. Unified
 > [이미지 출처](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
 )
@@ -19,14 +19,13 @@ Reference
 ![datapipeline_simple](https://user-images.githubusercontent.com/54028026/129995526-cecac563-4d9f-4ebc-92df-35ec94787536.png)
 ####  카프카를 사용하는 아키텍처는 카프카 브로커가 모든 프로세스의 매개자 역할을 하는데, 이 과정에서 아키텍처가 매우 단순해진다. 
 #### RabiitMQ, Apahce Pulsa 같은 메시징 큐는 데이터를 읽으면 해당 데이터를 사용한 것으로 간주하고 삭제한다. 반면 카프카는 데이터를 요청해서 사용하더라도 보존 정책에 의해 일정 시간 동안 보관한다. 즉 중앙집중화된 아키텍처이고, 데이터의 재요청이 가능하다. 따라서 수집한 데이터는 일단 카프카 클러스터에 전송한다. 그리고 데이터가 필요하면 카프카 클러스터에 요청만 하면된다. 이러한 카프카의 중앙집중화된 아키텍처는 기존의 1:1 매칭의 개발 스타일에서 발생하던 커플링 이슈를 해결하였다.
-
+--- 
 # 2. Producer & Consumer
 #### 카프카는 발행과 구독이라는 두 가지 행위가 존재한다. Producer는 데이터를 브로커에 전송한다. 그리고 Consumer는 카프카 브로커에 데이터를 요청하여 전달 받는다. 이때 원하는 데이터를 구분하기 위해 Topic이라는 개념이 존재한다. 
 #### 유튜브 채널을 구독한다고 생각해보자. 크리에이터(Producer)는 유튜브(Broker)에 존재한 자신의 채널(Topic)컨텐츠를 업로드(Produce)한다. 그리고 구독자(Consumer)는 자신이 원하는 채널(Topic)을 구독한다(Consume). 이러한 과정에서 프로듀서(유튜버)는 컨슈머(구독자)에게 컨텐츠(Data)를 전달하는 문제를 고려할 필요가 없다. 유튜브(브로커)에 업로드만 하면 채널의 컨텐츠를 소비하고자 하는 구독자가 플랫폼(카프카 브로커)에 요청하여 사용한다. 
 ![jinyes-kafka-producer consumer](https://user-images.githubusercontent.com/54028026/129997367-2c2a5f9e-f308-4ece-b359-1b9023dc925b.png)
 
-
-
+---
 # 3. Partition
 > [이미지 출처](https://kafka.apache.org/081/documentation.html)
 
