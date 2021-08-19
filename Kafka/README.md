@@ -1,5 +1,5 @@
 Reference
->[카프카 핵심 가이드 실시간 데이터와 스트림 프로세싱](http://www.yes24.com/Product/Goods/65418488?OzSrank=1)
+>[카프카 핵심 가이드 - 실시간 데이터와 스트림 프로세싱](http://www.yes24.com/Product/Goods/65418488?OzSrank=1)
 
 >[아파치 카프카 애플리케이션 프로그래밍 with 자바](http://www.yes24.com/Product/Goods/99122569?OzSrank=1)
 
