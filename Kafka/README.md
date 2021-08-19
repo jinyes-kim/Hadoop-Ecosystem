@@ -1,6 +1,6 @@
 
 # 0. Kafka
-##### 카프카는 이벤트 기반 분산 스트리밍 플랫폼이다. 비슷한 서비스로 GCP의 Pub/Sub, AWS의 Kinessis 등이 있다.
+#### 카프카는 이벤트 기반 분산 스트리밍 플랫폼이다. 비슷한 서비스로 GCP의 Pub/Sub, AWS의 Kinessis 등이 있다.
 
 # 1. Unified
 > [이미지 출처](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
