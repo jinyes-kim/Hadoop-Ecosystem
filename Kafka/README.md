@@ -24,10 +24,9 @@
 
 # 3. Partition
 > [이미지 출처](https://kafka.apache.org/081/documentation.html)
+![log_anatomy](https://user-images.githubusercontent.com/54028026/129998890-d8579ddd-6fe7-4b95-a505-2b6f510486ea.png)
 #### 카프카 브로커는 프로듀서로부터 전달 받은 데이터를 큐에 저장한다. 이를 파티션이라고 부른다. 다중 큐를 지원하여 파티션의 개수를 늘릴 수 있다. 이것이 카프카의 병렬 처리 메커니즘이다. (단 파티션의 개수가 2개 이상일 때 카프카는 offset의 순서를 보장하지 않는다.)
 #### 카프카에는 __commit_offset__이라는 토픽이 존재하는데, 해당 토픽은 데이터를 요청한 컨슈머와 그룹별로 특정 토픽의 몇 번째 offset까지 데이터를 읽었는지 저장한다. 이를 통해 특정 토픽을 여러 컨슈머와 그룹에서 요청하더라도 중복없이 데이터를 전달한다.  
-![log_anatomy](https://user-images.githubusercontent.com/54028026/129998890-d8579ddd-6fe7-4b95-a505-2b6f510486ea.png)
-
 ---
 Reference
 >[아파치 카프카 애플리케이션 프로그래밍 with 자바](http://www.yes24.com/Product/Goods/99122569?OzSrank=1)
