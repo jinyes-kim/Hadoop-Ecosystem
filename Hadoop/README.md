@@ -16,6 +16,7 @@
 
 ## 1.2 HDFS
 HDFS는 대용량 파일을 블록으로 나누어 클러스터에 참여하고 있는 여러 대의 노드에 저장한다. 즉 데이터를 여러 서버에 중복해서 저장함으로써 데이터의 안정성을 확보한다. 
+
 ![hdfsarchitecture](https://user-images.githubusercontent.com/54028026/128013505-02101d5b-a460-4e21-903e-152b68efb257.gif)
 > [https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)
 
