@@ -201,5 +201,11 @@ agent1.channels = memory-channel1 memory-channel2
 agent1.sinks = hdfs-sink1 hdfs-sink2
 ```
 
+# 5. Agent.conf 파일 실행
+```bash
+flume-ng agent --conf conf -conf-file conf/your_conf_file.conf --name agent_name
+```
+flume-ng 명령어로 실행한다. 위에서는 agent이름을 agent1으로 설정했으므로 agent_name에는 agent1을, -conf-file에는 agent.conf 
+
 ---
   
