@@ -143,7 +143,7 @@ sink의 이름은 앞서 정의한 hdfs-sink이므로 agent1.sinks.hdfs-sink를 
 
 - agent1.sinks.hdfs-sink.hdfs.rollCount
 
-    파일에 최대 라인 수를 지정한다. 0으로 설정하면 무제한이다.
+    파일의 최대 라인 수를 지정한다. 0으로 설정하면 무제한이다.
 
 ---
 
