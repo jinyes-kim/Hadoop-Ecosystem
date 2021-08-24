@@ -76,6 +76,7 @@ sbin 디렉터리의 start-.balancer.sh 파일은 밸런서 프로그램으로 �
 
 ## 노드 제거
 노드를 하둡 클러스터에서 제거하는 방법은 exclude 파일로 제어한다. HDFS는 dfs.hosts.exclude 속성에, YARN은 yarn.resourcemanager.nodes.exclude-path 속성에 제거할 노드를 설정한다. 설정 후 hdfs dfsadmin - refreshNodes 명령어로 갱신한다. 
+
 ---
 # 3. Cheat Sheet
 > https://linoxide.com/hadoop-commands-cheat-sheet/
