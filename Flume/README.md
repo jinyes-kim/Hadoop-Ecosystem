@@ -205,7 +205,8 @@ agent1.sinks = hdfs-sink1 hdfs-sink2
 ```bash
 flume-ng agent --conf conf -conf-file conf/your_conf_file.conf --name agent_name
 ```
-flume-ng 명령어로 실행한다. 위에서는 agent이름을 agent1으로 설정했으므로 agent_name에는 agent1을, -conf-file에는 agent.conf 
+flume-ng 명령어로 실행한다. 위에서는 agent이름을 agent1으로 설정했으므로 agent_name에는 agent1을, -conf-file에는 agent.conf 파일의 디렉토리 패스를 잡아주면 된다.   
+
 
 ---
   
