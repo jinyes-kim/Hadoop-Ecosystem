@@ -9,6 +9,65 @@
 Hive는 하둡에서 구조화된 데이터를 처리하기 위한 데이터 웨어하우스 인프라 도구다. 빅데이터를 요약하고 쿼리 및 분석을 쉽게 만든다. 
 
 ## 하이브의 특징
-- 스키마를 데이터베이스에 저장하고 처리된 데이터는 HDFS에 저장한다.
+- 스키마를 데이터베이스(하이브 메타스토어)에 저장하고 처리된 데이터는 HDFS에 저장한다.
 - [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing) 용으로 설계되었다.
 - HiveQL 이라는 SQL 스타일의 언어를 제공
+
+
+
+# 1. Cheat Sheet
+```bash
+# sample.txt
+
+1201,Gopa,45000,Technical manager
+1202,Manisha,45000,Proof reader
+1203,Masthanvali,40000,Technical writer
+1204,Kiran,40000,Hr Admin
+1205,Kranthi,3000,Op Admin
+```
+---
+
+## (1). 데이터베이스 관련
+```bash
+# 데이터베이스 생성
+CREATE DATABASE db_name;
+
+# 데이터베이스 조회
+SHOW DATABASES;
+
+# 데이터베이스 지정
+USE db_name;
+
+# 데이터베이스 삭제
+DROP DATABASE db_name;
+```
+
+## (2). 테이블 관련
+```bash
+# 테이블 생성
+CREATE TABLE sample (number INT, name STRING, salary INT, job STRING) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+
+# 테이블 리스트 조회
+SHOW TABLES;
+
+# 테이블 삭제
+DROP TABLE sample;
+```
+
+## (3). HDFS에서 데이터 로드
+```bash
+# sample.txt 데이터를 에 저장
+hdfs dfs -put sample.txt /
+
+# HDFS에서 Hive 테이블로 데이터 로드
+LOAD DATA INPATH '/sample.txt/' OVERWRITE INTO TABLE sample;
+```
+
+```bash
+
+```
+
+```bash
+
+```
