@@ -116,3 +116,10 @@ vi mapre-site.xml
   </property>
 </configuration>
 ```
+
+# Start Hadoop
+```
+hadoop namenode -format
+
+/hadoop/sbin/start-all.sh
+```
