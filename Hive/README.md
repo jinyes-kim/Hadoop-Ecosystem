@@ -63,7 +63,7 @@ SELECT * FROM sample;
 # sample.txt 데이터를 HDFS에 저장
 hdfs dfs -put sample.txt /
 
-# HDFS에 저장한 데이터를 Hive 테이블로 데이터 로드
+# HDFS에 저장한 데이터를 Hive 테이블로 로드
 LOAD DATA INPATH '/sample.txt/' OVERWRITE INTO TABLE sample;
 ```
 
