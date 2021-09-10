@@ -1,6 +1,5 @@
 # Hive Install Script
-
-하둡이 설치되어 있다고 가정합니다.
+*하둡이 설치되어있고 실행중이어야 합니다.*
 
 ```
 OS: Ubuntu 20.04 LTS
