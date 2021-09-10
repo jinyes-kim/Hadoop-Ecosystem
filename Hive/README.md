@@ -47,7 +47,12 @@ DROP DATABASE db_name;
 ## (2). 테이블 관련
 ```bash
 # 테이블 생성
-CREATE TABLE sample (number INT, name STRING, salary INT, job STRING) 
+CREATE TABLE sample (
+number INT,
+name STRING, 
+salary INT, 
+job STRING
+) 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 
 # 테이블 리스트 조회
