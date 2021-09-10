@@ -9,8 +9,8 @@ Hive: 2.3.9
 # Download Hive 
 cd /usr/local/
 wget https://archive.apache.org/dist/hive/hive-2.3.9/apache-hive-2.3.9-bin.tar.gz
-tar zxvf apache-hive-2.3.9.-bin.tar.gz
-mv apache-hive-2.3.9 hive
+tar zxvf apache-hive-2.3.9-bin.tar.gz
+mv apache-hive-2.3.9-bin hive
 
 
 # Add Hive env path
@@ -39,5 +39,5 @@ hadoop fs -chmod g+w /user/hive/warehouse
 
 
 # Start Hive
-hive
+bin/hive
 ```
