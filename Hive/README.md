@@ -16,6 +16,8 @@ Hive는 하둡에서 구조화된 데이터를 처리하기 위한 데이터 웨
 
 
 # 1. Cheat Sheet
+
+샘플 데이터
 ```bash
 # sample.txt
 
