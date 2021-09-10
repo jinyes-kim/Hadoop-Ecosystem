@@ -56,8 +56,18 @@ SHOW TABLES;
 # 테이블 삭제
 DROP TABLE sample;
 
+# 테이블 정보 조회
+DESC FORMATTED sample;
+
 # 테이블 데이터 조회
 SELECT * FROM sample;
+
+# 테이블 정보 변경
+ALTER TABLE name RENAME TO new_name
+ALTER TABLE name ADD COLUMNS (col_spec[, col_spec ...])
+ALTER TABLE name DROP [COLUMN] column_name
+ALTER TABLE name CHANGE column_name new_name new_type
+ALTER TABLE name REPLACE COLUMNS (col_spec[, col_spec ...])
 ```
 
 ## (3). HDFS에서 데이터 로드
