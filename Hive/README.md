@@ -53,16 +53,22 @@ SHOW TABLES;
 
 # 테이블 삭제
 DROP TABLE sample;
+
+# 테이블 데이터 조회
+SELECT * FROM sample;
 ```
 
 ## (3). HDFS에서 데이터 로드
 ```bash
-# sample.txt 데이터를 에 저장
+# sample.txt 데이터를 HDFS에 저장
 hdfs dfs -put sample.txt /
 
-# HDFS에서 Hive 테이블로 데이터 로드
+# HDFS에 저장한 데이터를 Hive 테이블로 데이터 로드
 LOAD DATA INPATH '/sample.txt/' OVERWRITE INTO TABLE sample;
 ```
+
+
+
 
 ```bash
 
