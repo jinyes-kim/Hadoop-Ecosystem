@@ -68,8 +68,7 @@ hdfs dfs -put sample.txt /
 # HDFS에 저장한 데이터를 Hive 테이블로 로드
 LOAD DATA INPATH '/sample.txt/' OVERWRITE INTO TABLE sample;
 ```
-
-
+로드한 데이터는 HDFS의 /user/hive/warehouse/ 경로에 저장된다.
 
 
 ```bash
