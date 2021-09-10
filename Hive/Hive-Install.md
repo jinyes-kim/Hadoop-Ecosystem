@@ -9,9 +9,11 @@ Hive: 2.3.9
 # Download Hive 
 cd /usr/local/
 wget https://archive.apache.org/dist/hive/hive-2.3.9/apache-hive-2.3.9-bin.tar.gz
+tar zxvf apache-hive-2.3.9.-bin.tar.gz
 mv apache-hive-2.3.9 hive
 
 
+# Add Hive env path
 # sudo vi ~/.bashrc
 export HIVE_HOME=/usr/local/hive
 
@@ -19,10 +21,8 @@ export HIVE_HOME=/usr/local/hive
 # make hive-site.sh
 cd /usr/local/hive/conf
 cp hive-env.sh.template hive-env.sh
+vi hive-env.sh
 
-
-# add Hadoop env path & Hive conf path
-# vi hive-env.sh
 export HADOOP_HOME=$HADOOP_HOME
 export HIVE_CONF_DIR=/usr/local/hive/conf
 
@@ -32,6 +32,7 @@ hadoop fs -mkdir /tmp
 hadoop fs -mkdir -p /user/hive/warehouse
 hadoop fs -chmod g+w /tmp
 hadoop fs -chmod g+w /user/hive/warehouse
+
 
 # Initialize Schema
 /usr/local/hive/bin/schematool -dbType derby -initSchema
