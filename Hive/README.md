@@ -87,11 +87,3 @@ LOAD DATA INPATH '/sample.txt/' OVERWRITE INTO TABLE sample;
 hdfs dfs -cp 명령어로 사용할 파일을 하이브 디렉토리로 복사하는 게 대안인 듯
 로드한 데이터는 HDFS의 /user/hive/warehouse/ 경로에 저장된다.
 
-
-```bash
-
-```
-
-```bash
-
-```
