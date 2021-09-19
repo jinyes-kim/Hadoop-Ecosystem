@@ -23,13 +23,18 @@ vi hbase/conf/hbase-site.xml
 # 아래 설정 추가
 
 <configuration>
-  <property>
-    <name>hbase.rootdir</name>
-    <value>hdfs://'Your Nmaenode':9000/hbase</value>
-  </property>
-  <property>
-    <name>hbase.cluster.distributed</name>
-    <value>true</value>
-  </property>
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://your-namenode:9000/hbase</value>
+    </property>
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>your-server-namer</value>
+    </property>
 </configuration>
+
 ```
